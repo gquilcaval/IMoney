@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9F9"
+
+    tools:context=".ui.view.fragments.PrincipalFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        >
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="14dp"
+
+
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:contentScrim="#3498DB"
+
+            android:id="@+id/collapsing_toolbar">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                >
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="1dp"
+                    app:layout_collapseMode="parallax"
+
+                    app:cardCornerRadius="25dp">
+
+                    <TextView
+                        android:id="@+id/tvFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/arimo"
+                        android:gravity="center"
+                        android:padding="15dp"
+
+                        android:text="Setiembre"
+                        android:textSize="16sp" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Saldo actual en cuentas"
+                        android:layout_marginTop="50dp"
+                        android:textSize="12sp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvSaldo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="S/0.00"
+                        android:layout_marginTop="65dp"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="95dp"
+                        android:gravity="center"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            android:layout_weight="5"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/icon_flecha_up"
+                                app:tint="#2ECC71" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp">
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:text="Ingresos"/>
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvIngresos"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="S/0.00"
+                                    android:textSize="18sp"
+                                    android:textColor="#2ECC71"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_weight="5">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/icon_flecha_down"
+                                app:tint="#E74C3C" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingLeft="8dp">
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:text="Gastos"/>
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tvGastos"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="S/0.00"
+                                    android:textSize="18sp"
+                                    android:textColor="#E74C3C"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+
+                app:layout_collapseMode="pin"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="100dp"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/arimo_bold"
+                    android:text="Gastos por Categoria" />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="25dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:gravity="center">
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/chartPieGastos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                           />
+
+                    </LinearLayout>
+
+
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ingresos por Categoria"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/arimo_bold"
+                    />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="25dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:gravity="center">
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/chartPieIngresos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                           />
+
+                    </LinearLayout>
+
+
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

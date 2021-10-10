@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.view.fragments.TransaccionesFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        >
+
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="?android:attr/listDivider" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center_horizontal">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chipGroup"
+            app:singleSelection="true"
+            android:paddingLeft="20dp"
+
+
+
+            >
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTodoas"
+                style="@style/CustomChipGeneralStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:chipIcon="@drawable/ic_flecha_up_24"
+                app:chipIconTint="@color/white"
+
+
+
+
+                android:text="Todas"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipIngresos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                style="@style/CustomChipGeneralStyle"
+                android:text="Ingresos"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipGastos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CustomChipGeneralStyle"
+
+                android:text="Gastos"/>
+
+
+
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+
+
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+</LinearLayout>

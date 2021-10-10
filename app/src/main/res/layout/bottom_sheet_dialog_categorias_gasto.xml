@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dialog_bg">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="50"
+                android:padding="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:backgroundTint="#8E44AD"
+                        android:background="@drawable/background_icono_circular"
+                        android:src="@drawable/icons8_open_book_24"
+                        app:tint="@color/white" />
+
+
+
+                <TextView
+                    android:id="@+id/tvEducacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"
+                    android:text="Educación"/>
+
+
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="50"
+                android:padding="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:src="@drawable/icon_finanzas_up"/>
+                <TextView
+                    android:id="@+id/tvLuz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"
+                    android:text="Luz"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="50"
+                android:padding="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:src="@drawable/icon_finanzas_up"/>
+                <TextView
+                    android:id="@+id/tvAgua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"
+                    android:text="Agua"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="50"
+                android:padding="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:src="@drawable/icon_finanzas_up"/>
+                <TextView
+                    android:id="@+id/tvInternet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"
+                    android:text="Internet"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="50"
+                android:padding="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:src="@drawable/icon_finanzas_up"/>
+                <TextView
+                    android:id="@+id/tvSupermercado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"
+                    android:text="Supermercado"/>
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,91 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.IMoney" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/celeste_normal</item>
+        <item name="colorPrimaryVariant">#21618C</item>
+        <item name="colorOnPrimary">@color/celeste_normal</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#2E86C1</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="colorOnSurface">#626567</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="fontFamily">@font/arimo_bold</item>
+    </style>
+
+    <style name="DialogAnimation">
+
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <!-- estilos gASTO-->
+    <style name="Theme.IMoney.IMoney_Gasto">
+        <!-- Primary brand color. -->
+
+        <item name="colorPrimary">@color/red_normal</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">#3c4f66</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/red_normal</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="colorOnSurface">@color/red_normal</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+
+    </style>
+    <!-- estilos INGRESOS-->
+    <style name="Theme.IMoney.IMoney_ingresos">
+        <!-- Primary brand color. -->
+
+        <item name="colorPrimary">@color/green_normal</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">#3c4f66</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/green_normal</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="colorOnSurface">@color/green_normal</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+
+    </style>
+
+    <style name="TexviewFMingresosPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/green_normal</item>
+    </style>
+
+    <style name="CustomChipGeneralStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_general</item>
+        <item name="android:textColor">@color/chip_text_background_general</item>
+    </style>
+
+    <style name="CustomChipIngresoStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_ingresos</item>
+        <item name="android:textColor">@color/chip_text_background_ingresos</item>
+    </style>
+
+    <style name="CustomChipGastoStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_gasto</item>
+        <item name="android:textColor">@color/chip_text_background_gasto</item>
+    </style>
+
+    <style name="CustomSwitchGastoStyle" parent="Widget.MaterialComponents.CompoundButton.Switch">
+
+    </style>
+
+</resources>

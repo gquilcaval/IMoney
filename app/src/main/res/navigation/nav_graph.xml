@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/principalFragment">
+
+    <fragment
+        android:id="@+id/principalFragment"
+        android:name="com.example.imoney.ui.view.fragments.PrincipalFragment"
+        android:label="fragment_principal"
+        tools:layout="@layout/fragment_principal" >
+        <action
+            android:id="@+id/action_principalFragment_to_dialogRegistroIngreso"
+            app:destination="@id/dialogRegistroIngreso" />
+        <action
+            android:id="@+id/action_principalFragment_to_dialogRegistroGasto"
+            app:destination="@id/dialogRegistroGasto" />
+    </fragment>
+    <fragment
+        android:id="@+id/transaccionesFragment"
+        android:name="com.example.imoney.ui.view.fragments.TransaccionesFragment"
+        android:label="fragment_transacciones"
+        tools:layout="@layout/fragment_transacciones" />
+    <dialog
+        android:id="@+id/dialogRegistroIngreso"
+        android:name="com.example.imoney.ui.view.fragments.DialogRegistroIngreso"
+        android:label="DialogRegistroIngreso" >
+        <action
+            android:id="@+id/action_dialogRegistroIngreso_to_dialogPrestamo"
+            app:destination="@id/dialogPrestamo" />
+    </dialog>
+    <dialog
+        android:id="@+id/dialogPrestamo"
+        android:name="com.example.imoney.ui.view.fragments.DialogPrestamo"
+        android:label="DialogPrestamo" >
+        <action
+            android:id="@+id/action_dialogPrestamo_to_dialogRegistroIngreso"
+            app:destination="@id/dialogRegistroIngreso" />
+    </dialog>
+    <fragment
+        android:id="@+id/transaccionFragment"
+        android:name="com.example.imoney.ui.view.fragments.DiarioFragment"
+        android:label="fragment_transaccion"
+        tools:layout="@layout/fragment_Diario" >
+        <action
+            android:id="@+id/action_transaccionFragment_to_dialogRegistroIngreso"
+            app:destination="@id/dialogRegistroIngreso" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogRegistroGasto"
+        android:name="com.example.imoney.ui.view.fragments.DialogRegistroGasto"
+        android:label="DialogRegistroGasto" />
+</navigation>

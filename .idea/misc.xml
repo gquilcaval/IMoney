@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/drawable/background_fb.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/drawable/chip_background_ingresos.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/activity_main.xml" value="0.10157041540020263" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/bottom_sheet_dialog_categorias_gasto.xml" value="0.21" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/bottom_sheet_dialog_categorias_ingresos.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/bottom_sheet_dialog_prestamos.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/cardview_container_transaccion.xml" value="0.67" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/cardview_detail_transaction.xml" value="0.2" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/cardview_transaccion.xml" value="0.25" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/cardview_transaccion_month.xml" value="0.25" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/dialog_registro_gasto.xml" value="0.25" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/dialog_registro_ingresos.xml" value="0.22" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_diario.xml" value="0.2109375" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_gastos.xml" value="0.22" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_ingresos.xml" value="0.25" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_mensual.xml" value="0.25" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_principal.xml" value="0.21409574468085107" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_semanal.xml" value="0.2109375" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_transaccion.xml" value="0.25" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_transacciones.xml" value="0.33" />
+        <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/menu/bottom_nav_menu.xml" value="0.371875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

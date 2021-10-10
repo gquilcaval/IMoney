@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:elevation="1dp"
+    android:layout_marginTop="8dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="20dp"
+
+            android:weightSum="50">
+
+            <TextView
+                android:id="@+id/tvNumberDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                />
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="5dp"
+            >
+
+                <LinearLayout
+                    android:id="@+id/cardFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/oliva">
+                    <TextView
+                        android:id="@+id/tvTextDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="martes"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        />
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvIngresosTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S/. 100.00"
+                android:visibility="gone"
+                android:gravity="end"
+                android:layout_weight="30"
+                android:textColor="@color/green_normal"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/tvGastosTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S/. 10.00"
+                android:visibility="gone"
+                android:gravity="end"
+                android:layout_weight="10"
+                android:textColor="@color/red_normal"
+                android:textSize="12sp"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewTransaccionChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+
+
+            android:clickable="true"
+            />
+
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
