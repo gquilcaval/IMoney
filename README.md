@@ -2,6 +2,7 @@
 
 
 El proyecto fue desarrollado con fines educativos.
+controla tus ingrsos, gastos, prestamos.
 
 ### Tecnologias usadas
 
