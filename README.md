@@ -2,7 +2,8 @@
 
 
 El proyecto fue desarrollado con fines educativos.
-controla tus ingrsos, gastos, prestamos.
+
+El objetivo de proyecto es controlar los ingresos, gastos, prestamos.
 
 ### Tecnologias usadas
 
