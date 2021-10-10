@@ -5,6 +5,13 @@ El proyecto fue desarrollado con fines educativos.
 
 El objetivo de proyecto es controlar los ingresos, gastos, prestamos.
 
+### Arquitectura
+- Clean architecture
+
+### Patron de diseño
+- MVVM
+
+
 ### Tecnologias usadas
 
 - Room 
@@ -14,6 +21,7 @@ El objetivo de proyecto es controlar los ingresos, gastos, prestamos.
 - ImageSlideshow
 - NavigationComponent
 - MPAndroidChart
+
 - oguzdev:CircularFloatingActionMenu
 
 link video demo https://www.loom.com/share/704165f9880b44bd8db243af42d558ed
