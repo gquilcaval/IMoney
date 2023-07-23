@@ -101,7 +101,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             app:tint="@color/gray"
-                            android:src="@drawable/icons8_solicitud_de_dinero_24"
+                            android:src="@drawable/ic_baseline_attach_money_24"
                             android:layout_weight="1"
                             />
 
@@ -164,7 +164,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             app:tint="@color/gray"
-                            android:src="@drawable/icons8_l_piz_24"
+                            android:src="@drawable/ic_outline_description_24"
                             android:layout_weight="1"
                             />
 
@@ -202,7 +202,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:tint="@color/gray"
-                            android:src="@drawable/icons8_etiqueta_de_precio_24"
+                            android:src="@drawable/ic_outline_label_24"
                             android:layout_weight="1"
                             />
 
@@ -262,6 +262,7 @@
                         android:gravity="center_vertical"
                         android:paddingTop="13dp"
                         android:clickable="true"
+                        tools:visibility="visible"
                         android:visibility="gone"
                         android:paddingBottom="13dp"
                         android:weightSum="50">
@@ -318,15 +319,8 @@
 
 
                             />
-
-
-
-
-
-
-
-
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

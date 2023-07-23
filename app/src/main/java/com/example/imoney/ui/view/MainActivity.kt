@@ -1,5 +1,7 @@
 package com.example.imoney.ui.view
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +21,7 @@ import com.oguzdev.circularfloatingactionmenu.library.SubActionButton
 
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -47,30 +50,24 @@ class MainActivity : AppCompatActivity() {
         itemBuilder.setTheme(2)
 
 
-
-
-
-
-
-
-
-
-        //1
+        //1 DOWN
         var itemIcon = ImageView(this)
         itemIcon.setImageDrawable(ContextCompat.getDrawable(applicationContext,
-            R.drawable.icon_finanzas_down
+            R.drawable.icon_flecha_down
         ))
+        itemIcon.setColorFilter(ContextCompat.getColor(this, R.color.red_normal), android.graphics.PorterDuff.Mode.SRC_IN)
 
         var button1 = itemBuilder.setContentView(itemIcon).build()
         button1.layoutParams = ViewGroup.LayoutParams(160,160)
 
 
 
-        //2
+        //2 UP
          itemIcon = ImageView(this)
         itemIcon.setImageDrawable(ContextCompat.getDrawable(applicationContext,
-            R.drawable.icon_finanzas_up
+            R.drawable.icon_flecha_up
         ))
+        itemIcon.setColorFilter(ContextCompat.getColor(this, R.color.green_normal), android.graphics.PorterDuff.Mode.SRC_IN)
 
         var button2 = itemBuilder.setContentView(itemIcon).build()
         button2.layoutParams = ViewGroup.LayoutParams(160,160)
@@ -84,13 +81,9 @@ class MainActivity : AppCompatActivity() {
             .addSubActionView(button1)
             .addSubActionView(button2)
             .setStartAngle(-30)
-
             .setRadius(300)
-
-
             .attachTo(actionButton)
             .build()
-
 
         button1.setOnClickListener {
             val dialog = DialogRegistroGasto()

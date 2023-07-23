@@ -25,9 +25,9 @@ class TransaccionesFragment : Fragment() {
 
 
     val tabsArray = arrayListOf<Tab>(
-        Tab("Diario", R.drawable.ic_flechas_invertidas),
+        Tab("MES", R.drawable.ic_flechas_invertidas),
        // Tab("Semanal", R.drawable.icon_finanzas_up),
-        Tab("Mes", R.drawable.icon_finanzas_down)
+        Tab("AÑO", R.drawable.icon_finanzas_down)
 
     )
     private var _binding: FragmentTransaccionesBinding? =null

@@ -8,7 +8,6 @@ import android.view.*
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import com.example.imoney.R
@@ -16,6 +15,8 @@ import com.example.imoney.data.clases.DatePicker
 import com.example.imoney.data.entity.Prestamo
 import com.example.imoney.data.entity.Transaccion
 import com.example.imoney.databinding.DialogRegistroGastoBinding
+import com.example.imoney.formatPriceToFloat
+import com.example.imoney.formatPriceToString
 import com.example.imoney.ui.viewmodel.FrTransaccionViewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -26,7 +27,7 @@ class DialogRegistroGasto: DialogFragment() {
     private val model: FrTransaccionViewModel by viewModels()
     private val viewModel: FrTransaccionViewModel by viewModels()
     val TAG = "FullScreenDialog"
-    var numeroDigitado = ""
+    var numeroDigitado = "0"
     val sdfDate = SimpleDateFormat("yyyy/MM/dd")
 
     private var _binding: DialogRegistroGastoBinding? =null
@@ -68,7 +69,7 @@ class DialogRegistroGasto: DialogFragment() {
         var idTransaction = arguments?.getString("id")
         var saldo = arguments?.getString("saldo")
         var switch = arguments?.getBoolean("switch")
-        var fecha = arguments?.getString("fecha")
+        var fecha = if(arguments?.getString("fecha").isNullOrEmpty()) sdfDate.format(Date()).toString() else arguments?.getString("fecha").toString()
         var descripcion = arguments?.getString("descripcion")
         var categoria = arguments?.getString("categoria")
         var persona = arguments?.getString("persona")
@@ -77,6 +78,7 @@ class DialogRegistroGasto: DialogFragment() {
 
         if (idTransaction == null){
             binding.tvSaldo.text = "0.00"
+            binding.tvFecha.text = fecha
             binding.buttonCategoria.text = "otro"
             binding.buttonCategoria.isEnabled = true
             binding.containerBtnCategoria.isEnabled = true
@@ -169,7 +171,7 @@ class DialogRegistroGasto: DialogFragment() {
             binding.etPersona.text.toString(),
             binding.buttonCategoria.text.toString(),
             "0","gasto",
-            String.format("%.2f",binding.tvSaldo.text.toString().toFloat()).toFloat(),
+            formatPriceToFloat(binding.tvSaldo.text.toString()),
             sdfDate.parse(binding.tvFecha.text.toString()))
         )
 
@@ -182,7 +184,7 @@ class DialogRegistroGasto: DialogFragment() {
             binding.etPersona.text.toString(),
             binding.buttonCategoria.text.toString(),
             "0","gasto",
-            String.format("%.2f",binding.tvSaldo.text.toString().toFloat()).toFloat(),
+                formatPriceToFloat(binding.tvSaldo.text.toString()),
             sdfDate.parse(binding.tvFecha.text.toString()))
         )
     }
@@ -194,7 +196,8 @@ class DialogRegistroGasto: DialogFragment() {
                 Prestamo(id,binding.etDescripcion.text.toString(),
                 binding.etPersona.text.toString(),
                 binding.buttonCategoria.text.toString(),
-                "0",0f,binding.tvSaldo.text.toString().toFloat())
+                "0",0f,
+                formatPriceToFloat(binding.tvSaldo.text.toString()))
             )
 
         }
@@ -205,7 +208,9 @@ class DialogRegistroGasto: DialogFragment() {
                 Prestamo(id,binding.etDescripcion.text.toString(),
                 binding.etPersona.text.toString(),
                 binding.buttonCategoria.text.toString(),
-                "0",0f,binding.tvSaldo.text.toString().toFloat())
+                "0",
+                0f,
+                formatPriceToFloat(binding.tvSaldo.text.toString()))
             )
 
         }
@@ -249,6 +254,7 @@ class DialogRegistroGasto: DialogFragment() {
         var opAgua  = dialog.findViewById<TextView>(R.id.tvAgua)
         var opInternet  = dialog.findViewById<TextView>(R.id.tvInternet)
         var opSupermercado = dialog.findViewById<TextView>(R.id.tvSupermercado)
+        var opOtro = dialog.findViewById<TextView>(R.id.tvOtro)
 
         opEducacion.setOnClickListener {
             binding.buttonCategoria.text =  opEducacion.text.toString()
@@ -268,6 +274,10 @@ class DialogRegistroGasto: DialogFragment() {
         }
         opSupermercado.setOnClickListener {
             binding.buttonCategoria.text =  opSupermercado.text.toString()
+            dialog.dismiss()
+        }
+        opOtro.setOnClickListener {
+            binding.buttonCategoria.text =  opOtro.text.toString()
             dialog.dismiss()
         }
     }
@@ -350,7 +360,7 @@ class DialogRegistroGasto: DialogFragment() {
             txtNumerosDigitados.text = numeroDigitado
         }
         btnListo.setOnClickListener {
-            binding.tvSaldo.text = String.format("%.2f",numeroDigitado.toFloat())
+            binding.tvSaldo.text = formatPriceToString(numeroDigitado.toFloat())
             dialog.dismiss()
         }
         btnCancelar.setOnClickListener{

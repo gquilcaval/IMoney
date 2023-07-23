@@ -10,7 +10,7 @@ import com.example.imoney.data.clases.Converter
 import com.example.imoney.data.entity.Prestamo
 import com.example.imoney.data.entity.Transaccion
 
-@Database(entities = arrayOf(Transaccion::class, Prestamo::class), version = 1)
+@Database(entities = [Transaccion::class, Prestamo::class], version = 1)
 @TypeConverters(Converter::class)
 abstract class AppDatabase : RoomDatabase() {
 

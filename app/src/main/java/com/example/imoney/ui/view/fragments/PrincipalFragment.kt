@@ -61,7 +61,6 @@ class PrincipalFragment : Fragment() {
                 }
                 if (x.tipo == "gasto") {
                     totGasto += x.monto
-
                 }
                 binding.tvSaldo.text = "S/ " + String.format("%.2f", totIngreso - totGasto)
                 binding.collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE)
@@ -78,18 +77,13 @@ class PrincipalFragment : Fragment() {
 
               if (it[x].tipo == "ingreso") {
                   totIngreso += it[x].monto
-
               }
               if (it[x].tipo == "gasto") {
-
                   totGasto += it[x].monto
-
-
               }
               binding.tvIngresos.text = "S/" + String.format("%.2f", totIngreso).toString()
               binding.tvGastos.text = "S/ " + String.format("%.2f", totGasto).toString()
           }
-
 
         })
 
@@ -103,29 +97,23 @@ class PrincipalFragment : Fragment() {
 
 
                 if (x.tipo == "ingreso") {
-
                     arrayPieEntriesIngresos.add(PieEntry(x.monto,x.categoria))
-
-
-
-
                 }
                 if (x.tipo == "gasto") {
                     arrayPieEntriesGastos.add(PieEntry(x.monto,x.categoria))
-
                 }
 
             }
-
 
             loaPieChartData(arrayPieEntriesIngresos,arrayPieEntriesGastos)
 
         })
     }
 
+    //GRAFICA GASTOS POR CATEGORIA
     fun setupPieChart(){
         //Gastos
-        binding.chartPieGastos.isDrawHoleEnabled = false
+        binding.chartPieGastos.isDrawHoleEnabled = true
         binding.chartPieGastos.setUsePercentValues(false)
         binding.chartPieGastos.setEntryLabelTextSize(15f)
         binding.chartPieGastos.setDrawEntryLabels(false)
@@ -146,7 +134,10 @@ class PrincipalFragment : Fragment() {
         legendGastos.textSize = 14f
 
         //Ingresos
-        binding.chartPieIngresos.isDrawHoleEnabled = false
+        binding.chartPieIngresos.isDrawHoleEnabled = true // activar grafica con agujero al centro
+        binding.chartPieIngresos.setHoleColor(Color.WHITE)
+        binding.chartPieIngresos.setTransparentCircleColor(Color.WHITE)
+        binding.chartPieIngresos.setTransparentCircleAlpha(110)
         binding.chartPieIngresos.setUsePercentValues(false)
         binding.chartPieIngresos.setEntryLabelTextSize(15f)
         binding.chartPieIngresos.setDrawEntryLabels(false)
@@ -160,21 +151,29 @@ class PrincipalFragment : Fragment() {
         legendIngresos.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
         legendIngresos.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
         legendIngresos.orientation = Legend.LegendOrientation.HORIZONTAL
-        legendIngresos.xOffset = 8f
+        legendIngresos.xOffset = 10f
         legendIngresos.setDrawInside(false)
         legendIngresos.isEnabled = true
-        legendIngresos.xEntrySpace = 20f
+        legendIngresos.xEntrySpace = 10f
         legendIngresos.textSize = 14f
     }
 
     fun loaPieChartData(pieEntriesIngresos: List<PieEntry>,pieEntriesGastos: List<PieEntry>){
 
 
+        if(pieEntriesGastos.isEmpty()) {
+            binding.chartPieGastos.visibility = View.GONE
+        }
+
+        if(pieEntriesIngresos.isEmpty()) {
+            binding.chartPieIngresos.visibility = View.GONE
+        }
+
         var colors = arrayListOf<Int>()
         for (color:Int in ColorTemplate.MATERIAL_COLORS){
             colors.add(color)
         }
-        for (color:Int in ColorTemplate.VORDIPLOM_COLORS){
+        for (color:Int in ColorTemplate.MATERIAL_COLORS){
             colors.add(color)
         }
         var dataSetIngresos = PieDataSet(pieEntriesIngresos,"")
@@ -185,7 +184,7 @@ class PrincipalFragment : Fragment() {
         dataIngresos.setDrawValues(true)
         dataIngresos.setValueFormatter(PercentFormatter(binding.chartPieIngresos))
         dataIngresos.setValueTextSize(14f)
-        dataIngresos.setValueTextColor(Color.BLACK)
+        dataIngresos.setValueTextColor(Color.WHITE)
 
         var dataSetGastos = PieDataSet(pieEntriesGastos,"")
         dataSetGastos.setColors(colors)
@@ -196,7 +195,7 @@ class PrincipalFragment : Fragment() {
         dataGastos.setDrawValues(true)
         dataGastos.setValueFormatter(PercentFormatter(binding.chartPieGastos))
         dataGastos.setValueTextSize(14f)
-        dataGastos.setValueTextColor(Color.BLACK)
+        dataGastos.setValueTextColor(Color.WHITE)
 
         //CHART INGRESOS
 

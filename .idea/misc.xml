@@ -24,6 +24,14 @@
         <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_transaccion.xml" value="0.25" />
         <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/layout/fragment_transacciones.xml" value="0.33" />
         <entry key="..\:/Users/aries/AndroidStudioProjects/IMoney/app/src/main/res/menu/bottom_nav_menu.xml" value="0.371875" />
+        <entry key="..\:/Users/aries/OneDrive/Documentos/workspace_android/IMoney/app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" value="0.3505" />
+        <entry key="..\:/Users/aries/OneDrive/Documentos/workspace_android/IMoney/app/src/main/res/layout/activity_main.xml" value="0.1703125" />
+        <entry key="..\:/Users/aries/OneDrive/Documentos/workspace_android/IMoney/app/src/main/res/layout/bottom_sheet_dialog_categorias_gasto.xml" value="0.5351437699680511" />
+        <entry key="..\:/Users/aries/OneDrive/Documentos/workspace_android/IMoney/app/src/main/res/layout/bottom_sheet_dialog_categorias_ingresos.xml" value="0.33" />
+        <entry key="..\:/Users/aries/OneDrive/Documentos/workspace_android/IMoney/app/src/main/res/layout/dialog_registro_gasto.xml" value="0.5" />
+        <entry key="..\:/Users/aries/OneDrive/Documentos/workspace_android/IMoney/app/src/main/res/layout/dialog_registro_ingresos.xml" value="0.33" />
+        <entry key="..\:/Users/aries/OneDrive/Documentos/workspace_android/IMoney/app/src/main/res/layout/fragment_principal.xml" value="0.33" />
+        <entry key="..\:/Users/aries/OneDrive/Documentos/workspace_android/IMoney/app/src/main/res/layout/fragment_transacciones.xml" value="0.2484375" />
       </map>
     </option>
   </component>

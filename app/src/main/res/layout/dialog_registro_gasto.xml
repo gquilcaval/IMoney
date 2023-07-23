@@ -95,7 +95,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             app:tint="#666666"
-                            android:src="@drawable/icons8_solicitud_de_dinero_24"
+                            android:src="@drawable/ic_baseline_attach_money_24"
                             android:layout_weight="1"
                             />
 
@@ -205,7 +205,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             app:tint="#666666"
-                            android:src="@drawable/icons8_l_piz_24"
+                            android:src="@drawable/ic_outline_description_24"
                             android:layout_weight="1"
                             />
 
@@ -241,7 +241,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/icons8_etiqueta_de_precio_24"
+                            android:src="@drawable/ic_outline_label_24"
                             android:layout_weight="1"
                             app:tint="#666666"
                             />

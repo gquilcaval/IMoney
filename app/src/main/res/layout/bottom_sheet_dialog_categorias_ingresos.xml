@@ -6,106 +6,174 @@
     android:layout_height="match_parent"
     android:background="@drawable/dialog_bg">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="15dp"
-            android:weightSum="50">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
 
-            <ImageView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:src="@drawable/icon_finanzas_up" />
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="15dp"
+                android:weightSum="50">
 
-            <TextView
-                android:id="@+id/tvSueldo"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="10"
+                    android:src="@drawable/sueldo" />
+
+                <TextView
+                    android:id="@+id/tvSueldo"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="18sp"
+                    android:text="Sueldo" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="40"
-                android:text="Sueldo" />
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:gravity="center"
+                android:weightSum="50">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="10"
+                    android:src="@drawable/premio" />
+
+                <TextView
+                    android:id="@+id/tvPremio"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="18sp"
+                    android:text="Premio" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="15dp"
+                android:weightSum="50">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="10"
+                    android:src="@drawable/inversion" />
+
+                <TextView
+                    android:id="@+id/tvInversiones"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_weight="40"
+                    android:text="Inversiones" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="15dp"
+                android:weightSum="50">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="10"
+                    android:src="@drawable/regalo" />
+
+                <TextView
+                    android:id="@+id/tvRegalo"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="18sp"
+                    android:text="Regalo" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="15dp"
+                android:weightSum="50">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="10"
+                    android:src="@drawable/prestamo" />
+
+                <TextView
+                    android:id="@+id/tvPrestamo"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="18sp"
+                    android:text="Prestamo" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="15dp"
+                android:weightSum="50">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="10"
+                    android:src="@drawable/otro" />
+
+                <TextView
+                    android:id="@+id/tvOtro"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:textSize="18sp"
+                    android:text="Otro" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
+    </ScrollView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="15dp"
-            android:weightSum="50">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:src="@drawable/icon_finanzas_up" />
-
-            <TextView
-                android:id="@+id/tvPremio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="40"
-                android:text="Premio" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="15dp"
-            android:weightSum="50">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:src="@drawable/icon_finanzas_up" />
-
-            <TextView
-                android:id="@+id/tvInversiones"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="40"
-                android:text="Inversiones" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="15dp"
-            android:weightSum="50">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:src="@drawable/icon_finanzas_up" />
-
-            <TextView
-                android:id="@+id/tvRegalo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="40"
-                android:text="Regalo" />
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

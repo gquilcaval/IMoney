@@ -19,6 +19,8 @@ import com.example.imoney.data.clases.DatePicker
 import com.example.imoney.data.entity.Prestamo
 import com.example.imoney.data.entity.Transaccion
 import com.example.imoney.databinding.DialogRegistroIngresosBinding
+import com.example.imoney.formatPriceToFloat
+import com.example.imoney.formatPriceToString
 import com.example.imoney.ui.view.adapters.PrestamosAdapter
 import com.example.imoney.ui.viewmodel.FrIngresoViewModel
 import com.example.imoney.ui.viewmodel.FrTransaccionViewModel
@@ -33,10 +35,10 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
     private lateinit var bottomSheetDialog:Dialog
     private var idPrestamo = ""
     private var totalPrestamo = 0f
-    val sdfDate = SimpleDateFormat("yyyy/MM/dd")
+    private val sdfDate = SimpleDateFormat("yyyy/MM/dd")
 
     val TAG = "FullScreenDialog"
-    var numeroDigitado = ""
+    var numeroDigitado: String = ""
 
 
     private var _binding: DialogRegistroIngresosBinding? =null
@@ -46,8 +48,6 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
         _binding = DialogRegistroIngresosBinding.inflate (inflater,container,false)
         return binding.root
     }
@@ -56,32 +56,25 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-
-
         val dialog = super.onCreateDialog(savedInstanceState)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         return dialog
-
-
     }
-
 
     override fun onStart() {
         super.onStart()
         if (binding.tvSaldo.text == "0.00"){
             showBottomSheetNumeros()
         }
-
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        //RELLANA CAMPOS SI SE VA ACTUALIZAR
         var idTransaction = arguments?.getString("id")
         var saldo = arguments?.getString("saldo")
         var switch = arguments?.getBoolean("switch")
-        var fecha = arguments?.getString("fecha")
+        var fecha = if(arguments?.getString("fecha").isNullOrEmpty()) sdfDate.format(Date()).toString() else arguments?.getString("fecha").toString()
         var descripcion = arguments?.getString("descripcion")
         var categoria = arguments?.getString("categoria")
         var monto = arguments?.getString("monto")
@@ -98,6 +91,7 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
 
         if (idTransaction == null){
             binding.tvSaldo.text = "0.00"
+            binding.tvFecha.text = fecha
             binding.buttonCategoria.text = "otro"
             binding.buttonCategoria.isEnabled = true
             binding.containerBtnCategoria.isEnabled = true
@@ -119,59 +113,46 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
         }
 
 
-
-
         binding.tvSaldo.setOnClickListener {
-
             showBottomSheetNumeros()
-
         }
 
         binding.containerBtnCategoria.setOnClickListener {
-
             showBottomSheetCategoria()
         }
 
         // EVENTO SWITCH PRESTAMO TRUE O FALSE
         binding.switchPrestamo.setOnCheckedChangeListener { buttonView, isChecked ->
-
             if (buttonView.isChecked){
                 binding.buttonCategoria.text = "Prestamo"
                 binding.buttonCategoria.isEnabled = false
                 binding.containerBtnCategoria.isEnabled = false
                 binding.containerPrestamos.visibility = View.VISIBLE
-
-
             }
             else{
                 binding.buttonCategoria.text = "otro"
                 binding.buttonCategoria.isEnabled = true
                 binding.containerBtnCategoria.isEnabled = true
                 binding.containerPrestamos.visibility = View.GONE
-
             }
         }
 
         //EVENTO SHOW DIALOG PRESTAMOS
 
         binding.containerPrestamos.setOnClickListener {
-
             showBottomSheetPrestamos()
         }
 
         //EVENTO SHOW DATEPICKER
         binding.tvFecha.setOnClickListener {
-
             val fecha = DatePicker{ year, month, day -> monstrarDate(year,month,day) }
             fecha.show(this.childFragmentManager,"")
         }
 
 
-
         // EVENTO  SAVE  OR TRANSACTION AND UPDATE PRESTAMO
 
         binding.btnGuardar.setOnClickListener {
-
             var uniqueID = UUID.randomUUID().toString()
             if (idTransaction == null){
                 saveTransaction(uniqueID)
@@ -194,20 +175,16 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
     }
 
     fun saveTransaction( id: String){
-
-
-
             model.insert(
                 Transaccion(id,binding.tvDescripcion.text.toString(),
                 binding.tvPersona.text.toString(),
                 binding.buttonCategoria.text.toString(),
                 "0","ingreso",
-                String.format("%.2f",binding.tvSaldo.text.toString().toFloat()).toFloat(),
+                formatPriceToFloat(binding.tvSaldo.text.toString()),
                 sdfDate.parse(binding.tvFecha.text.toString()))
             )
-
-
     }
+
     fun updateTransaction(id: String){
 
 
@@ -216,7 +193,7 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
             binding.tvPersona.text.toString(),
             binding.buttonCategoria.text.toString(),
             "0","ingreso",
-            String.format("%.2f",binding.tvSaldo.text.toString().toFloat()).toFloat(),
+                formatPriceToFloat(binding.tvSaldo.text.toString()),
             sdfDate.parse(binding.tvFecha.text.toString()))
         )
     }
@@ -271,6 +248,8 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
         var opPremio  = dialog.findViewById<TextView>(R.id.tvPremio)
         var opInversiones  = dialog.findViewById<TextView>(R.id.tvInversiones)
         var opRegalo  = dialog.findViewById<TextView>(R.id.tvRegalo)
+        var opPrestamo  = dialog.findViewById<TextView>(R.id.tvPrestamo)
+        var opOtro  = dialog.findViewById<TextView>(R.id.tvOtro)
 
         opSueldo.setOnClickListener {
             binding.buttonCategoria.text =  opSueldo.text.toString()
@@ -286,6 +265,15 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
         }
         opRegalo.setOnClickListener {
             binding.buttonCategoria.text =  opRegalo.text.toString()
+            dialog.dismiss()
+        }
+
+        opPrestamo.setOnClickListener {
+            binding.buttonCategoria.text = opPrestamo.text.toString()
+            dialog.dismiss()
+        }
+        opOtro.setOnClickListener {
+            binding.buttonCategoria.text = opOtro.text.toString()
             dialog.dismiss()
         }
 
@@ -370,9 +358,7 @@ class DialogRegistroIngreso: DialogFragment() , PrestamosAdapter.RecyclerItemCli
             txtNumerosDigitados.text = numeroDigitado
         }
         btnListo.setOnClickListener {
-
-
-           binding.tvSaldo.text = String.format("%.2f",numeroDigitado.toFloat())
+            if (numeroDigitado.isNullOrEmpty()) dialog.dismiss() else binding.tvSaldo.text = formatPriceToString(numeroDigitado.toFloat())
             dialog.dismiss()
         }
         btnCancelar.setOnClickListener{
